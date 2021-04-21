@@ -4,7 +4,7 @@ fetch('https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-da
 
     drawTreemap(data);
     createLegend();
-    
+
 });
 
 function drawTreemap(data){
@@ -70,18 +70,18 @@ function drawTreemap(data){
                     .duration(200)
                     .style("visibility", "visible")
                     .style("opacity", 0.9);
-    
+
                 tooltip.html(`
                     ${movie.data.name}<br>
                     Category: ${movie.data.category}<br>
                     Value: $${movie.value}
                 `)
-    
+
                 tooltip.style("left", (event.pageX + 10)  + 'px')
                         .style("top", (event.pageY + 10) + 'px');
-    
+
                 tooltip.attr("data-value", movie.value);
-                    
+
             })
             .on("mouseout", () => {
                 tooltip.transition()
@@ -91,15 +91,15 @@ function drawTreemap(data){
             /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-            
+
 
     // appending text inside the blocks
     tile.append("text")
             .text(movie => movie.data.name)
             .attr("x", "0")
-            .attr("y", "0")
+            .attr("y", "40")
             .attr("class", "legend-font");
-    
+
 }
 
 
@@ -112,7 +112,7 @@ function createLegend(){
     const legendWidth = 100;
     const legendHeight = 250;
     const legendPadding = 15;
-    
+
     const legend = d3.select("#legend")
                         .attr("width", legendWidth)
                         .attr("height", legendHeight)

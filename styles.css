@@ -35,3 +35,7 @@ body{
     visibility: hidden;
     color: black;
 }
+
+.tile:hover{
+    fill: white;
+}
