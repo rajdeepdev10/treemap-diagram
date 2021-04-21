@@ -74,7 +74,7 @@ function drawTreemap(data){
                 tooltip.html(`
                     ${movie.data.name}<br>
                     Category: ${movie.data.category}<br>
-                    Value: $${movie.value}
+                    Sales: ${movie.value}
                 `)
 
                 tooltip.style("left", (event.pageX + 10)  + 'px')
